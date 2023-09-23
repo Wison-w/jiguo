@@ -55,7 +55,7 @@ mySwiper.el.onmouseout = function () {
 // 点赞
 var good=document.querySelectorAll('.good');
 var review=document.querySelectorAll('.review');
-// var like=document.querySelector('.like');
+var like=document.querySelectorAll('.like');
 for(i=0;i<good.length;i++){
     good[i].setAttribute('index',i)
     good[i].onclick=function(){
@@ -90,16 +90,20 @@ for(i=0;i<review.length;i++){
         }
     }
 }
-
-// like.onclick=function(){
-//     if(like.className=='like'){
-//         likenum++;
-//         like.className='like l_active';
-//         like.innerHTML=likenum
-//     }
-//     else{
-//         likenum--;
-//         like.className='like'
-//         like.innerHTML=likenum
-//     }
-// }
+for(i=0;i<like.length;i++){
+    like[i].setAttribute('index',i)
+    like[i].onclick=function(){
+        var index=this.getAttribute('index')
+        var likenum=like[index].firstChild.nodeValue;
+        if(like[index].className=='like'){
+            likenum++;
+            like[index].className='like l_active';
+            like[index].innerHTML=likenum
+        }
+        else{
+            likenum--;
+            like[index].className='like'
+            like[index].innerHTML=likenum
+        }
+    }
+}
