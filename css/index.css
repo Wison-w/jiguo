@@ -67,13 +67,23 @@ a {
   height: 380px;
   margin: 0 auto;
 }
-.Hot .hot .title {
+.title {
   width: 1000px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   font-weight: bold;
   margin: 0 auto;
+  position: relative;
+}
+.title .more {
+  color: #fe5341;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
+  padding-right: 17px;
+  font-size: 14px;
+  background: url(../img/readMore.png) no-repeat right;
 }
 .swiper-slide {
   height: 315px;
@@ -177,4 +187,90 @@ a {
 .swiper-button-prev,
 .swiper-button-next {
   color: #777;
+}
+/* 报告精选 */
+.Report {
+  width: 100%;
+  height: 590px;
+  background-color: #f7f7f7;
+}
+.report {
+  width: 1000px;
+  margin: 0 auto;
+  height: 590px;
+}
+.report_content {
+  width: 1000px;
+  height: 540px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+.item {
+  width: 220px;
+  height: 231px;
+  line-height: 21px;
+  border: 1px solid #e6e9e9;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.item img {
+  width: 220px;
+  height: 130px;
+  border-radius: 6px 6px 0 0;
+}
+.item .txt {
+  padding: 7px 10px 10px;
+  box-sizing: border-box;
+}
+.item .txt .txt_detail1 {
+  font-size: 14px;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item .txt .txt_detail2 {
+  color: #a3a3a3;
+  margin: 13px 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.item .txt .txt_detail2 .icon {
+  width: 52px;
+  display: flex;
+  justify-content: space-between;
+}
+.item .txt .txt_detail2 .icon .good,
+.item .txt .txt_detail2 .icon .review,
+.item .txt .txt_detail2 .icon .like {
+  padding-left: 14px;
+  cursor: pointer;
+}
+.item .txt .txt_detail2 .icon .good {
+  background: url(../img/zan.png) no-repeat left;
+}
+.item .txt .txt_detail2 .icon .like {
+  background: url(../img/xin.png) no-repeat left;
+}
+.item .txt .txt_detail2 .icon .review {
+  background: url(../img/reply.png) no-repeat left;
+}
+.item .txt .txt_detail2 .icon .g_active {
+  background: url(../img/zan1.png) no-repeat left !important;
+}
+.item .txt .txt_detail2 .icon .r_active {
+  background: url(../img/reply1.png) no-repeat left !important;
+}
+.item .txt .txt_detail2 .icon .l_active {
+  background: url(../img/xin1.png) no-repeat left !important;
+}
+.item:hover img {
+  opacity: 0.9;
+  animation: op 1s ease infinite;
 }

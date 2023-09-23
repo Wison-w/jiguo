@@ -41,9 +41,9 @@ var mySwiper = new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    // autoplay: {
-    //     delay: 2000,
-    // },
+    autoplay: {
+        delay: 2000,
+    },
     effect: 'slide',
 })
 mySwiper.el.onmouseover = function () {
@@ -52,3 +52,54 @@ mySwiper.el.onmouseover = function () {
 mySwiper.el.onmouseout = function () {
     mySwiper.autoplay.start();
 }
+// 点赞
+var good=document.querySelectorAll('.good');
+var review=document.querySelectorAll('.review');
+// var like=document.querySelector('.like');
+for(i=0;i<good.length;i++){
+    good[i].setAttribute('index',i)
+    good[i].onclick=function(){
+        var index=this.getAttribute('index')
+        var goodnum=good[index].firstChild.nodeValue;
+        if(good[index].className=='good'){
+            goodnum++;
+            good[index].className='good g_active';
+            good[index].innerHTML=goodnum;
+        }
+        else{
+            goodnum--;
+            good[index].className='good';
+            good[index].innerHTML=goodnum;
+        }
+    }
+}
+for(i=0;i<review.length;i++){
+    review[i].setAttribute('index',i)
+    review[i].onclick=function(){
+        var index=this.getAttribute('index')
+        var reviewnum=review[index].firstChild.nodeValue;
+        if(review[index].className=='review'){
+            reviewnum++;
+            review[index].className='review r_active';
+            review[index].innerHTML=reviewnum
+        }
+        else{
+            reviewnum--;
+            review[index].className='review'
+            review[index].innerHTML=reviewnum
+        }
+    }
+}
+
+// like.onclick=function(){
+//     if(like.className=='like'){
+//         likenum++;
+//         like.className='like l_active';
+//         like.innerHTML=likenum
+//     }
+//     else{
+//         likenum--;
+//         like.className='like'
+//         like.innerHTML=likenum
+//     }
+// }
