@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 /* banner */
 .Banner {
   width: 100%;
@@ -52,4 +55,126 @@
   border-radius: 3px;
   background-color: #fe5341;
   cursor: pointer;
+}
+/* 热门部分 */
+.Hot {
+  width: 100%;
+  background-color: #fff;
+  height: 380px;
+}
+.Hot .hot {
+  width: 1100px;
+  height: 380px;
+  margin: 0 auto;
+}
+.Hot .hot .title {
+  width: 1000px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.swiper-slide {
+  height: 315px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.swiper-slide a {
+  display: block;
+  width: 220px;
+  height: 286px;
+  border: 1px solid #e6e9e9;
+  border-radius: 6px;
+  position: relative;
+}
+.swiper-slide a i {
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  border-radius: 0 6px 0 6px;
+  display: block;
+  padding: 3px;
+  z-index: 1;
+}
+.swiper-slide a .sf {
+  background-color: #fe5341;
+  color: white;
+}
+.swiper-slide a .zx {
+  background: #fbf4cb;
+  color: #c4a96a;
+}
+.swiper-slide a img {
+  width: 220px;
+  height: 130px;
+  border-radius: 6px 6px 0 0;
+}
+.swiper-slide a .hot_detail {
+  width: 220px;
+  height: 155px;
+  padding: 8px 8px 14px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.swiper-slide a .hot_detail h2 {
+  font-size: 16px;
+  height: 48px;
+  font-weight: bold;
+  color: #333;
+}
+.swiper-slide a .hot_detail p {
+  color: #333;
+}
+.swiper-slide a .hot_detail p span {
+  color: #fe5341;
+}
+.swiper-slide a .hot_detail .red {
+  color: #fe5341;
+}
+.swiper-slide a .hot_detail .red span {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid #fe5341;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 12px;
+}
+.swiper-slide a .hot_detail .green {
+  color: #80c269;
+}
+.swiper-slide a .hot_detail .green span {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid #80c269;
+  border-radius: 5px;
+  color: #80c269;
+  margin: 0 5px;
+  font-size: 12px;
+}
+.swiper-slide a:hover img {
+  opacity: 0.9;
+  animation: op 1s ease infinite;
+}
+@keyframes op {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #777;
 }

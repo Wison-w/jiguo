@@ -33,3 +33,22 @@ var timer=setInterval(function(){
         clearInterval(timer);
     }
 },1000)
+//轮播图
+var mySwiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    // autoplay: {
+    //     delay: 2000,
+    // },
+    effect: 'slide',
+})
+mySwiper.el.onmouseover = function () {
+    mySwiper.autoplay.stop();
+}
+mySwiper.el.onmouseout = function () {
+    mySwiper.autoplay.start();
+}
