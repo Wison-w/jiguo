@@ -302,3 +302,15 @@ else if (src.indexOf('vip') != -1) {
     }
     more.style.color = "#999"
 }
+//点击之后变色
+var header_list = document.querySelector('iframe').contentWindow.document.getElementsByTagName('ul')[0];
+header_list.children[0].firstElementChild.style.color = "#333 ";
+header_list.children[0].firstElementChild.onmouseenter = function () {
+    this.style.color = "#FE5431"
+}
+header_list.children[0].firstElementChild.onmouseleave = function () {
+    this.style.color = "#333"
+}
+header_list.children[3].firstElementChild.style.color = "#FE5431 ";
+
+
