@@ -1,11 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>导购清单</title>
-</head>
-<body>
+    <title>发现酷玩</title>
     
+    <link rel="stylesheet" href="../css/play.css">
+    <style>
+        .name{
+    font-size: 14px;
+    /* height: 45px; */
+    overflow: hidden;
+    word-break: break-all;
+    color: #474747;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
+}
+
+.info{
+    background: url(../img/listbg.jpg) no-repeat left 92px;
+    background-size: 221px 19px;
+    padding: 7px 10px 38px;
+}
+p{
+    height: 40px;
+}
+.myDiv>li:nth-of-type(14){
+position: absolute;
+left: 263px;
+bottom: 0px;
+}
+.myDiv>li:nth-of-type(15){
+position: absolute;
+left: 517px;
+bottom: 0px;
+}
+    </style>
+</head>
+
+
+<body>
+    <iframe src="../head.html" frameborder="0" width="100%" height="76px"></iframe>
+    <h1>导购清单</h1>
+    <div class="play_nav">
+        <a href="javascript:void(0);" class="on">最新</a>
+        <a href="./hot.html">最热</a>
+        
+
+    </div>
+    <!-- 中间商品 -->
+    <div class="banner">
+        <div class="warp">
+            <ul class="myDiv">
+                <li>
+                    <a href="detail.html" style="height: 231px;">
+                        <img src="../img/k1.jpg" alt="">
+                        <div class="info">
+                            <p class="name">花万元把蜗居秒变“豪宅”？这12件家具就能帮你办到
+                            </p>
+                            <div class="tip">
+                                <span class="price"></span>
+                                <div class="right">
+                                    <span class="xin">3</span>
+                                    <span class="look">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 加载更多 -->
+        <div class="playMore">
+            <a href="javascript:void(0);" class="more-btn comMore">点击加载更多</a>
+        </div>
+    </div>
+
+    <iframe src="../footer.html" frameborder="0" width="100%" height="360px"></iframe>
 </body>
+
 </html>
+<script>
+
+
+    var str = '';
+    // ajax获取数据
+    var ajax_ = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
+    ajax_.open("get", "http://127.0.0.1:3000/guid/new");
+    ajax_.send();
+    ajax_.onreadystatechange = function () {
+        if (ajax_.readyState == 4) {
+            if (ajax_.status == 200) {
+                var data = JSON.parse(ajax_.responseText)
+                console.log(data.length);
+
+                var myDiv = document.querySelector('.myDiv');
+
+                for (i = 0; i < 8; i++) {
+                    
+                    var myDiv_a = data[i]
+                    console.log(myDiv_a);
+                   
+              
+                str+=`
+                <li>
+                    <a href="detail.html" style="height: 231px;">
+                        <img src="${myDiv_a.img}" alt="">
+                        <div class="info">
+                            <p class="name">${myDiv_a.text}
+                            </p>
+                            <div class="tip">
+                                <span class="price"></span>
+                                <div class="right">
+                                    <span class="xin">${myDiv_a.like}</span>
+                                    <span class="look">${myDiv_a.words}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                `
+                    
+                }
+                myDiv.innerHTML = str;
+
+            }
+
+        }
+        var xin = document.querySelectorAll('.xin');
+        var look = document.querySelectorAll('.look');
+
+        // console.log(xin[0]);
+
+        for (var i = 0; i < xin.length; i++) {
+            xin[i].onclick = function (e) {
+                var num = this.innerHTML;
+                e.returnValue = false;
+                if (this.style.color != 'red') {
+                    this.style.color = 'red';
+                    this.innerHTML = ++num;
+                    this.style.background = 'url(../img/xinRedh.png) no-repeat left center'
+                    this.style.backgroundSize = '13px 13px'
+                } else {
+                    this.style.color = '#a3a3a3'
+                    this.innerHTML = --num;
+                    this.style.background = 'url(../img/xin.png) no-repeat left center'
+                    this.style.backgroundSize = "13px 13px"
+                }
+            }
+            look[i].onclick = function (e) {
+                var num = this.innerHTML;
+                e.returnValue = false;
+                if (this.style.color != 'red') {
+                    this.style.color = 'red';
+                    this.innerHTML = ++num;
+                    this.style.background = 'url(../img/气泡1.png) no-repeat left center'
+                    this.style.backgroundSize = '13px 13px'
+                } else {
+                    this.style.color = '#a3a3a3'
+                    this.innerHTML = --num;
+                    this.style.background = 'url(../img/气泡.png) no-repeat left center'
+                    this.style.backgroundSize = "13px 13px"
+                }
+            }
+
+        }
+    };
+
+
+
+    var more_btn = document.querySelector(".more-btn");
+    // console.log(more_btn);
+    more_btn.onclick = function () {
+        this.innerHTML = "正在加载中"
+        this.style.background = 'url(../img/loading-icon.gif) no-repeat left center'
+        setTimeout(function () {
+            // 在定时器触发后要执行的代码
+            console.log('定时器已触发！');
+            more_btn.parentNode.removeChild(more_btn.parentNode.firstElementChild);
+            // more_btn.innerHTML = "meiyougengduol"
+            //
+            var ajax_ = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
+            ajax_.open("get", "http://127.0.0.1:3000/guid/new");
+            ajax_.send();
+            ajax_.onreadystatechange = function () {
+                if (ajax_.readyState == 4) {
+                    if (ajax_.status == 200) {
+                        var data = JSON.parse(ajax_.responseText)
+                        console.log(data);
+
+                        var myDiv = document.querySelector('.myDiv');
+
+                        for (i = 8; i < data.length; i++) {
+                            var myDiv_a = data[i]
+                            console.log(myDiv_a);
+                          
+                                str+=`
+                <li>
+                    <a href="detail.html" style="height: 231px;">
+                        <img src="${myDiv_a.img}" alt="">
+                        <div class="info">
+                            <p class="name">${myDiv_a.text}
+                            </p>
+                            <div class="tip">
+                                <span class="price"></span>
+                                <div class="right">
+                                    <span class="xin">${myDiv_a.like}</span>
+                                    <span class="look">${myDiv_a.words}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                `
+                            
+                        }
+                        myDiv.innerHTML = str;
+
+                    }
+
+                }
+                var xin = document.querySelectorAll('.xin');
+                var look = document.querySelectorAll('.look');
+
+                // console.log(xin[0]);
+
+                for (var i = 0; i < xin.length; i++) {
+
+                    xin[i].onclick = function (e) {
+                        var num = this.innerHTML;
+                        e.returnValue = false;
+                        if (this.style.color != 'red') {
+                            this.style.color = 'red';
+                            this.innerHTML = ++num;
+                            this.style.background = 'url(../img/xinRedh.png) no-repeat left center'
+                            this.style.backgroundSize = '13px 13px'
+                        } else {
+                            this.style.color = '#a3a3a3'
+                            this.innerHTML = --num;
+                            this.style.background = 'url(../img/xin.png) no-repeat left center'
+                            this.style.backgroundSize = "13px 13px"
+                        }
+                    }
+                    look[i].onclick = function (e) {
+                        var num = this.innerHTML;
+                        e.returnValue = false;
+                        if (this.style.color != 'red') {
+                            this.style.color = 'red';
+                            this.innerHTML = ++num;
+                            this.style.background = 'url(../img/气泡1.png) no-repeat left center'
+                            this.style.backgroundSize = '13px 13px'
+                        } else {
+                            this.style.color = '#a3a3a3'
+                            this.innerHTML = --num;
+                            this.style.background = 'url(../img/气泡.png) no-repeat left center'
+                            this.style.backgroundSize = "13px 13px"
+                        }
+                    }
+
+                }
+            };
+            // 
+
+
+        }, 2000);
+
+
+
+
+
+    }
+
+window.frames[0].onload = function () {
+    var header_list = document.querySelector('iframe').contentDocument.getElementsByTagName('ul')[0];
+    header_list.children[0].firstElementChild.style.color = "#333 ";
+    header_list.children[0].firstElementChild.onmouseenter = function () {
+        this.style.color = "#FE5431"
+    }
+    header_list.children[0].firstElementChild.onmouseleave = function () {
+        this.style.color = "#333"
+    }
+    header_list.children[2].firstElementChild.style.color = "#FE5431 ";
+}
+
+</script>

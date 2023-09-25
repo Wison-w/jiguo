@@ -12,8 +12,6 @@ iframe {
 }
 .title {
   width: 100%;
-  border-top: 1px solid #cecfcfc3;
-  box-shadow: 0px -1px 3px #cecfcf;
 }
 .title .top {
   width: 100%;
