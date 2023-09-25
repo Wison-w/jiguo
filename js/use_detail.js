@@ -1,3 +1,16 @@
+//切换页面后变色
+window.frames[0].onload = function () {
+    var header_list = document.querySelector('iframe').contentWindow.document.getElementsByTagName('ul')[0];
+    header_list.children[0].firstElementChild.style.color = "#333 ";
+    header_list.children[0].firstElementChild.onmouseenter = function () {
+        this.style.color = "#FE5431"
+    }
+    header_list.children[0].firstElementChild.onmouseleave = function () {
+        this.style.color = "#333"
+    }
+    header_list.children[3].firstElementChild.style.color = "#FE5431 ";
+
+}
 var apply = document.querySelector('.apply');
 var people = document.querySelector('.people');
 var number = document.querySelector('.number');
@@ -33,3 +46,4 @@ var timer = setInterval(function () {
         clearInterval(timer);
     }
 }, 1000)
+
