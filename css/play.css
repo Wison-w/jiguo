@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    padding: 34px 0 30px;
+    font-size: 40px;
+    font-weight: normal;
+    color: #333333;
+    /* background-color: aqua; */
+}
+li{
+    list-style: none;
+    width: 220px;
+    height: 231px;
+    border-radius: 6px;
+    border: 1px solid #c4c6c6;
+     margin-bottom: 25px;
+     background-color: white;
+}
+li:hover img{
+    animation: aa 2s linear infinite;
+    
+}
+@keyframes aa{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+a{
+    text-decoration: none;
+    display: block;
+    color: #474747;
+}
+.play_nav{
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+   
+    
+}
+.play_nav>a{
+    display: inline-block;
+    font-size: 18px;
+    padding-bottom: 12px;
+    width: 165px;
+    text-decoration: none;
+    color: #A3A3A3;
+}
+.on{
+    border-bottom: 4px #fe5431 solid;
+    color: #fe5431 !important;
+}
+.banner{
+    width: 100%;
+    background-color: #F7F7F7;
+}
+.warp{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+.myDiv{
+    width: 1000px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    position: relative;
+}
+li img{
+    width: 220px;
+    height: 130px;
+    /* background: transparent; */
+}
+.info{
+    padding: 7px 10px 10px;
+}
+.name{
+    font-size: 14px;
+    /* height: 45px; */
+    overflow: hidden;
+    word-break: break-all;
+    color: #474747;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; 
+    overflow: hidden;
+}
+li a{
+    border-radius: 6px;
+}
+.info span{
+    color: #A3A3A3;
+    font-size: 12px;
+}
+.tip{
+    padding: 15px 0;
+    position: relative;
+}
+.price{
+    display: block;
+    float: left;
+    color: #fe5341 !important;
+    font-size: 14px !important;
+}
+.right{
+    float: right;
+}
+.xin{
+    padding-left: 14px;
+    background: url(../img/xin.png) no-repeat left center;
+    background-size: 13px 13px;
+
+}
+.look{
+    padding-left: 14px;
+    background: url(../img/气泡.png) no-repeat left center;
+    background-size: 13px 13px;
+}
+.tip:hover{
+    cursor: pointer;
+}
+/* 加载更多 */
+.playMore{
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.more-btn{
+    background: url(../img/more.png) no-repeat left center;
+    color: #fe5341;
+    padding-left: 24px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* 品类 */
+.comment{
+    background-color: #F7F7F7;
+    
+}
