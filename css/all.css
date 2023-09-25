@@ -84,6 +84,7 @@ header {
     line-height: 30px;
     border-radius: 3px;
     border: 1px #fe5341 solid;
+    margin-right: 10px;
 }
 
 .register:hover {
