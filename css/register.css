@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 1000px;
+  height: 785px;
+  margin: 25px auto;
+  border: 1px solid #cecfcf;
+  border-radius: 5px;
+}
+.box h2 {
+  padding: 0 25px;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 500;
+  border-left: 5px solid #fe5431;
+}
+.box form {
+  width: 400px;
+  height: 512px;
+  margin: 100px 299px;
+}
+.box form p {
+  margin-top: 27px;
+  width: 400px;
+  height: 50px;
+}
+.box form p input {
+  width: 386px;
+  height: 46px;
+  border: 1px solid #cecfcf;
+  border-radius: 5px;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+  outline: none;
+}
+.box form p input::placeholder {
+  font-size: 17px;
+}
+.box form p:nth-of-type(2) input {
+  width: 240px;
+  height: 46px;
+  float: left;
+}
+.box form p:nth-of-type(2) canvas {
+  margin-left: 15px;
+  float: left;
+}
+.box form p:nth-of-type(6) input {
+  width: 386px;
+  height: 46px;
+  background-color: #fe5431;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
