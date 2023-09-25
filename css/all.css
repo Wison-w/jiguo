@@ -1,19 +1,25 @@
 /* 头部 */
-*{
+* {
     margin: 0;
     padding: 0;
 }
-ul{
+
+ul {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header{
+
+header {
     width: 100%;
     height: 76px;
+    box-shadow: 0 0 8px #cecfcf inset;
+    box-sizing: border-box;
 }
-.header{
+
+.header {
     width: 1000px;
     height: 76px;
     margin: 0 auto;
@@ -21,44 +27,54 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-.logo{
+
+.logo {
     width: 133px;
     height: 52px;
 }
-.logo img{
+
+.logo img {
     width: 100%;
     height: 100%;
 }
-.header ul{
+
+.header ul {
     width: 500px;
     height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.header ul li{
+
+.header ul li {
     height: 60px;
     line-height: 60px;
 }
-.header ul li a{
+
+.header ul li a {
     color: #333;
     font-size: 20px;
     transition: color 0.2s ease;
 }
-.header ul li:nth-of-type(1) a{
+
+.header ul li:nth-of-type(1) a {
     color: #fe5341;
 }
-.header ul li a:hover{
+
+.header ul li a:hover {
     color: #fe5341;
 }
-.sr{
+
+.sr {
     width: 300px;
 }
-.sr a{
+
+.sr a {
     display: block;
     float: right;
 }
-.register{
+
+.register {
     transition: all 0.2s linear;
     color: #fe5341;
     font-size: 16px;
@@ -69,27 +85,32 @@ header{
     border-radius: 3px;
     border: 1px #fe5341 solid;
 }
-.register:hover{
+
+.register:hover {
     background: #fe5341;
     color: #fff;
 }
-.search{
+
+.search {
     width: 30px;
     height: 30px;
     background: url(../img/search.png) no-repeat center;
     margin-right: 30px;
 }
-.search:hover{
+
+.search:hover {
     scale: 1.1;
 }
+
 /* 底部 */
-footer{
+footer {
     width: 100%;
     background: #505050;
     color: #a3a3a3;
     height: 360px;
 }
-.footer{
+
+.footer {
     width: 1000px;
     margin: 0 auto;
     height: 360px;
@@ -97,28 +118,34 @@ footer{
     justify-content: space-between;
     position: relative;
 }
-.footer p{
+
+.footer p {
     margin-top: 20px;
 }
-dl{
+
+dl {
     margin-top: 40px;
     font-size: 13px;
     line-height: 20px;
 }
-dl dt{
+
+dl dt {
     font-size: 16px;
     color: white;
     margin-bottom: 20px;
 }
-dl dd a{
+
+dl dd a {
     color: #a3a3a3;
     font-size: 12px;
 }
-dl:nth-of-type(4) dd{
+
+dl:nth-of-type(4) dd {
     display: flex;
     justify-content: space-between;
 }
-dl:nth-of-type(4) dd a{
+
+dl:nth-of-type(4) dd a {
     text-align: left;
     width: 64px;
 }
