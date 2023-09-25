@@ -203,7 +203,6 @@ if (window.location.href.indexOf('report/index') != -1) {
                 var index42 = 0
                 var index51 = 0
                 var index52 = 0
-                console.log(zan[0]);
                 zan[0].children[1].children[0].onclick = function (e) {
                     index11++
                     window.event ? e.returnValue = false : e.preventDefault();
