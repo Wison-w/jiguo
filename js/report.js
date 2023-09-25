@@ -1,3 +1,4 @@
+// 渲染
 if (window.location.href.indexOf('report/index') != -1) {
     // 最新
     var ajax = new XMLHttpRequest || new ActiveXObject("Microsoft.XMLHTTP")
@@ -37,9 +38,15 @@ if (window.location.href.indexOf('report/index') != -1) {
                         }
                     }
                 }
+                var zan = document.querySelector('.bl2').children[1]
+                console.log(zan);
+                zan.children[0].onclick = function () {
+                    zan.children[0].children[0].src = '../img/zan1.png'
+                }
             }
         }
     }
+
 } else if (window.location.href.indexOf('report/hot') != -1) {
     // 最热
     var ajax_ = new XMLHttpRequest || new ActiveXObject("Microsoft.XMLHTTP")
@@ -83,6 +90,7 @@ if (window.location.href.indexOf('report/index') != -1) {
         }
     }
 }
+// 点击加载更多
 var more = document.querySelector('.more')
 var btm = document.querySelector('.bottom')
 more.onclick = function () {
@@ -184,5 +192,15 @@ more.onclick = function () {
         btm.style.height = '5000px'
     }, 2000);
 }
-
-
+var a = document.querySelector('iframe').contentDocument
+console.log(a);
+// console.log(a.contentWindow.document.querySelector('.header'));
+// var header_list = document.querySelector('iframe').contentWindow.document.getElementsByTagName('ul')[0];
+// header_list.children[0].firstElementChild.style.color = "#333 ";
+// header_list.children[0].firstElementChild.onmouseenter = function () {
+//     this.style.color = "#FE5431"
+// }
+// header_list.children[0].firstElementChild.onmouseleave = function () {
+//     this.style.color = "#333"
+// }
+// header_list.children[3].firstElementChild.style.color = "#FE5431 ";

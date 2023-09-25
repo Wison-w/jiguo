@@ -113,11 +113,15 @@
 }
 .box .bottom .content .left .bl li:nth-of-type(2n-1) .bl1 .bl2 div:nth-of-type(2) span {
   margin-right: 5px;
+  position: relative;
+  z-index: 10;
 }
 .box .bottom .content .left .bl li:nth-of-type(2n-1) .bl1 .bl2 div:nth-of-type(2) span img {
   width: 21px;
   height: 20px;
   transform: translate(0, 5px);
+  position: relative;
+  z-index: 10;
 }
 .box .bottom .content .left .bl li:nth-of-type(2n) {
   width: 698px;
