@@ -4,7 +4,7 @@
 }
 .box {
   width: 1000px;
-  height: 785px;
+  height: 500px;
   margin: 25px auto;
   border: 1px solid #cecfcf;
   border-radius: 5px;
@@ -38,16 +38,7 @@
 .box form p input::placeholder {
   font-size: 17px;
 }
-.box form p:nth-of-type(2) input {
-  width: 240px;
-  height: 46px;
-  float: left;
-}
-.box form p:nth-of-type(2) canvas {
-  margin-left: 15px;
-  float: left;
-}
-.box form p:nth-of-type(6) input {
+.box form p:nth-of-type(3) input {
   width: 386px;
   height: 46px;
   background-color: #fe5431;

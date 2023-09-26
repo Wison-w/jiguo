@@ -67,11 +67,28 @@ header {
 
 .sr {
     width: 300px;
+    height: 30px;
 }
 
 .sr a {
     display: block;
     float: right;
+}
+
+.sr div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    float: right;
+    display: none;
+    transform: translate(0, -10px);
+}
+
+.sr div img {
+    width: 50px;
+    height: 50px;
 }
 
 .register {

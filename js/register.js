@@ -11,7 +11,6 @@ var form = document.querySelector("#form")//表单
 pnum.onblur = function () {
     reg = /^1[34578][0-9]{9}$/;
     if (reg.test(pnum.value) == false) {
-        // alert('手机号格式不正确')
         return false
     } else {
         return true
@@ -80,17 +79,6 @@ input.onblur = function () {
     if (text === num) {
         return true;
     } else {
-        // alert('验证码不正确')
-        return false;
-    }
-}
-//用户名
-user.onblur = function () {
-    reg = /^[1-9][0-9]{9}$/
-    if (reg.test(user.value) == true) {
-        return true;
-    } else {
-        // alert('用户名格式不正确')
         return false;
     }
 }
@@ -100,7 +88,6 @@ pass1.onblur = function () {
     if (reg.test(pass1.value) == true) {
         return true;
     } else {
-        // alert('密码格式不正确')
         return false;
     }
 }
@@ -109,18 +96,25 @@ pass2.onblur = function () {
     if (pass2.value == pass1.value) {
         return true;
     } else {
-        // alert('两次输入的密码不相同')
         return false;
     }
 }
 //登陆
 button.onclick = function (e) {
-    if (pnum.onblur() && input.onblur()) {
-        addCookie('username', user.value)
+    if (pnum.onblur() && input.onblur() && pass1.onblur() && pass2.onblur()) {
+        addCookie('pnum', pnum.value)
         addCookie('password', pass1.value)
         form.submit();
-        console.log(1);
     } else {
         e.returnValue = false;
+        if (pnum.onblur() == false) {
+            alert(" alert('手机号格式不正确')")
+        } else if (input.onblur() == false) {
+            alert('验证码不正确')
+        } else if (pass1.onblur() == false) {
+            alert('密码格式不正确')
+        } else {
+            alert('两次输入的密码不相同')
+        }
     }
 }

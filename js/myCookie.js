@@ -1,8 +1,6 @@
-var arry = []
 // 增加cookie
 function addCookie(key, val) {
     document.cookie = `${key}=${val}`
-    arry.push(document.cookie)
 }
 // 删除cookie
 function removeCookie(key) {
