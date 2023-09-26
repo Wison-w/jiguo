@@ -101,8 +101,11 @@
                 <!-- 右边 -->
                 <div class="listR">
                     <dl>
-                        <dd><a href="javascrpt:void(0);">喜欢&nbsp; 15</a></dd>
-                        <dd><a href="javascrpt:void(0);">分享</a></dd>
+                        <dd class="ddclick"><img src="../img/xinRedo.png" alt="" class="ing">
+                            <a class="xihuan" href="javascrpt:void(0);">喜欢&nbsp; <span class="like">15</span></a></dd>
+                        <dd class=""><img src="../img/share_yj1.png" alt="">
+                            <a href="javascrpt:void(0);">分享</a></dd>
+                       
                     </dl>
 
                 </div>
@@ -114,3 +117,39 @@
     
 </body>
 </html>
+<script>
+    window.frames[0].onload = function () {
+    var header_list = document.querySelector('iframe').contentDocument.getElementsByTagName('ul')[0];
+    header_list.children[0].firstElementChild.style.color = "#333 ";
+    header_list.children[0].firstElementChild.onmouseenter = function () {
+        this.style.color = "#FE5431"
+    }
+    header_list.children[0].firstElementChild.onmouseleave = function () {
+        this.style.color = "#333"
+    }
+    header_list.children[2].firstElementChild.style.color = "#FE5431 ";
+}
+
+
+// 心点击加一
+var ddclick=document.querySelector(".ddclick");
+var xin = document.querySelector(".like");
+var ing =document.querySelector(".ing");
+console.log(ing);
+var xihuan=document.querySelector(".xihuan");
+ddclick.onclick=function(){
+        var num=xin.innerHTML;
+        if(xin.style.color != 'red'){
+            xin.style.color = 'red';
+            xihuan.style.color = 'red';
+            xin.innerHTML = ++num;
+            ing.src="../img/xinRedh.png";
+            
+        }else{
+            xin.style.color = '#a3a3a3';
+            xihuan.style.color = '#a3a3a3';
+            xin.innerHTML = --num;
+            ing.src="../img/xinRedo.png";
+        }
+    }
+</script>
