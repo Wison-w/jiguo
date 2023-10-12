@@ -16,7 +16,7 @@ apply.onclick = function () {
 }
 var times = document.querySelector('.timer')
 var timer = setInterval(function () {
-    var timeOut = new Date(2023, 9, 10);
+    var timeOut = new Date(2024, 5, 10);
     var nowTime = new Date();
     var time = timeOut - nowTime;
     var day = parseInt(time / 1000 / 60 / 60 / 24);
